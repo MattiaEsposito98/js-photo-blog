@@ -1,0 +1,35 @@
+/* RESET */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  color: currentColor;
+  text-decoration: none;
+}
+ 
+img {
+  width: 100%;
+}
+
+/* Header */
+.title-header {
+  position: relative;
+}
+
+.title-header h1 {
+  position: absolute;
+ left: 50%;
+ margin-left: -25px;
+ top: 50%;
+ margin-top: -25px;
+ 
+ 
+ 
+}
