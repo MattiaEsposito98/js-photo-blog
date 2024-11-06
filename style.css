@@ -70,3 +70,29 @@ html {
 .card p {
   margin-left: 7px;
 }
+
+
+
+
+
+
+
+/* Media queries */
+/* Tablet */
+@media (max-width:768px){
+  .col-3 {
+    width: 50%;
+  }
+}
+
+/* Mobile 480px */
+@media (max-width: 480px) {
+
+  .title-header {
+    font-size: 20px;
+  }
+
+  .col-3 {
+    width: 100%;
+  }
+}
