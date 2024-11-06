@@ -1,5 +1,5 @@
-const rowEl = document.querySelector('.row')
-console.log(rowEl)
+const wallEl = document.querySelector('.wall')
+console.log(wallEl)
 
 
 axios.get('https://jsonplaceholder.typicode.com/photos?_limit=6')
@@ -8,7 +8,7 @@ axios.get('https://jsonplaceholder.typicode.com/photos?_limit=6')
     const cards = res.data
     console.log(cards)
 
-    appendCards (cards,rowEl)
+    appendCards (cards,wallEl)
   })
 
   .catch((err) => {
