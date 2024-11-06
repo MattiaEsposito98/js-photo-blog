@@ -28,8 +28,33 @@ img {
  left: 50%;
  margin-left: -25px;
  top: 50%;
- margin-top: -25px;
- 
- 
- 
+ margin-top: -25px; 
+}
+
+
+/* LAYOUT */
+.container {
+	max-width: 1024px;
+	margin: 0 auto;
+  margin-top: 50px;
+}
+
+.row {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 20px 0;
+}
+
+.row > * {
+	padding: 0 10px;
+}
+
+.col-3 {
+	width: calc(100% / 3);
+}
+
+
+/* Card */
+.card {
+  border: solid 1px;
 }
