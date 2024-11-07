@@ -15,6 +15,7 @@ a {
 }
 
 img {
+  aspect-ratio: 1/1;
   width: 100%;
 }
 
@@ -34,6 +35,7 @@ img {
 /* LAYOUT */
 html {
   background-image: url("./img/cork.png");
+  
 }
 
 .container {
@@ -62,11 +64,10 @@ html {
   border: solid 1px;
   background-color: white;
   position: relative;
-  height: 380px;
+  height: 100%;
 }
 
 .card img {
-  aspect-ratio: 1/1;
   padding: 10px;
 }
 
@@ -101,10 +102,29 @@ button {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -932%) ;
-  z-index: 5;
+  transform: translate(-50%, -857%) ;
+  z-index: 100;
   font-size: 30px;
+  cursor: pointer;
+  
 }
+
+.container-cardBig {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 100px;
+  z-index: 100;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  
+}
+
+
+
 
 
 /* Media queries */
@@ -113,6 +133,7 @@ button {
   .col-3 {
     width: 50%;
   }
+
 }
 
 /* Mobile 480px */
