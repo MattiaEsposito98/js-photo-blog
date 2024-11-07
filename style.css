@@ -85,6 +85,19 @@ html {
 }
 
 
+/* effetto hover */
+.card:hover {
+  transform: rotate(10deg);
+  z-index: 1;
+}
+
+/* Effetto hover attivato dopo il click */
+.card.hovered {
+  transform: scale(1.1);
+
+}
+
+
 
 /* Media queries */
 /* Tablet */

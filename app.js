@@ -31,7 +31,18 @@ function appendCards(cards, root) {
     `
     root.innerHTML += cardsHTML
   });
+
+
+ // Aggiungere l'evento click per ogni card
+ const cardsGenerate = document.querySelectorAll('.card');
+ cardsGenerate.forEach(card => {
+  card.addEventListener('click', function() {
+     card.classList.toggle('hovered');
+   });
+ });
 }
+
+
 
 
 
