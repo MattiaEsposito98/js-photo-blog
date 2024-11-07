@@ -26,7 +26,7 @@ function appendCards(cards, root) {
   <div class="col-3">
     <div class="card">
       <img src="./img/pin.svg" class="decoration-card">
-      <img src=${url} alt="">
+      <img src=${url} alt="" id = "cardUrl">
       <p>${title}</p>
     </div>
   </div>
@@ -45,18 +45,21 @@ function appendCards(cards, root) {
 
     // Creo elementi
     card.addEventListener('click', function () {
+      const element = document.getElementById ("cardUrl")
+      const imageUrl = element.src
+      console.log (imageUrl)
       card.classList.toggle('hovered');
       const button = document.createElement('button')
       button.textContent = "Chiudi"
       document.body.appendChild(button)
       let cardBig = document.createElement('img')
-      cardBig.style.width = '80%';
-      cardBig.style.height = '80%';
-      cardBig.style.position = 'absolute';
-      cardBig.style.top = '50%';
-      cardBig.style.left = '58%';
+      cardBig.style.width = '600px'
+      cardBig.style.height = '600px'
+      cardBig.style.position = 'absolute'
+      cardBig.style.top = '50%'
+      cardBig.style.left = '50%'
       cardBig.style.transform = 'translate(-50%, -50%)';
-      cardBig.src = card.url
+      cardBig.src = imageUrl
 
 
 
