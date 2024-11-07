@@ -38,7 +38,20 @@ function appendCards(cards, root) {
  cardsGenerate.forEach(card => {
   card.addEventListener('click', function() {
      card.classList.toggle('hovered');
-   });
+     const button = document.createElement ('button')
+     button.textContent = "Chiudi"
+     document.body.appendChild(button)
+
+    //  Funzione per rimuovere bottone
+    function closeCard () {
+      button.removeEventListener ('click', closeCard)
+      button.remove()
+      location.reload();
+    }
+     button.addEventListener ('click', closeCard)
+     
+
+     }, { once: true } );   //once: true per effettuare solo una volta l'evento
  });
 }
 
