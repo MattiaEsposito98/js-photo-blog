@@ -40,26 +40,27 @@ function appendCards(cards, root) {
   // Aggiungere l'evento click per ogni card
   const cardsGenerate = document.querySelectorAll('.card');
   console.log(cardsGenerate)
-  cardsGenerate.forEach(card => {
+  cardsGenerate.forEach((card,i) => {
 
 
     // Creo elementi
-    card.addEventListener('click', function () {
-      const element = document.getElementById ("cardUrl")
-      const imageUrl = element.src
-      console.log (imageUrl)
+    card.addEventListener('click',() => {
+      const {url} = cards[i]
       card.classList.toggle('hovered');
+
       const button = document.createElement('button')
       button.textContent = "Chiudi"
       document.body.appendChild(button)
+
       let cardBig = document.createElement('img')
+      cardBig.src = url
       cardBig.style.width = '600px'
       cardBig.style.height = '600px'
       cardBig.style.position = 'absolute'
       cardBig.style.top = '50%'
       cardBig.style.left = '50%'
       cardBig.style.transform = 'translate(-50%, -50%)';
-      cardBig.src = imageUrl
+      
 
 
 
@@ -75,7 +76,7 @@ function appendCards(cards, root) {
       button.addEventListener('click', closeCard)
 
 
-    },);   //once: true per effettuare solo una volta l'evento    { once: true }
+    });   //once: true per effettuare solo una volta l'evento    { once: true }
   });
 
 
