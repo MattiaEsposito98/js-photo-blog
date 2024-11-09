@@ -35,7 +35,7 @@ img {
 /* LAYOUT */
 html {
   background-image: url("./img/cork.png");
-  
+  overflow: hidden;
 }
 
 .container {
@@ -93,7 +93,7 @@ html {
   z-index: 1;
 }
 
-/* Effetto hover attivato dopo il click */
+/* Classe aggiunta in js al click sulla card*/
 .card.hovered {
   transform: scale(1.1);
 }
@@ -120,10 +120,9 @@ button {
   z-index: 100;
   background-color: rgba(0, 0, 0, 0.5);
   display: none;
+  overflow: hidden;
   
 }
-
-
 
 
 

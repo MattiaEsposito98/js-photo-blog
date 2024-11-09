@@ -1,7 +1,6 @@
 const wallEl = document.querySelector('.wall')
-console.log(wallEl)
-let overlay = document.querySelector('.container-cardBig')
-console.log (overlay)
+const overlay = document.querySelector('.container-cardBig')
+const button = document.createElement('button')
 
 
 axios.get('https://jsonplaceholder.typicode.com/photos?_limit=6')
@@ -32,26 +31,24 @@ function appendCards(cards, root) {
   </div>
     `
     root.innerHTML += cardsHTML
-  });
-
+  })
 
 
 
   // Aggiungere l'evento click per ogni card
-  const cardsGenerate = document.querySelectorAll('.card');
-  console.log(cardsGenerate)
-  cardsGenerate.forEach((card,i) => {
+  const cardsGenerate = document.querySelectorAll('.card')
+  cardsGenerate.forEach((card, i) => {
 
+    // /////////////////////
+    card.addEventListener('click', () => {
 
-    // Creo elementi
-    card.addEventListener('click',() => {
-      const {url} = cards[i]
-      card.classList.toggle('hovered');
+      const { url } = cards[i]
+      card.classList.add('hovered')
 
-      const button = document.createElement('button')
       button.textContent = "Chiudi"
       document.body.appendChild(button)
 
+      // creo imagine da js
       let cardBig = document.createElement('img')
       cardBig.src = url
       cardBig.style.width = '600px'
@@ -59,28 +56,35 @@ function appendCards(cards, root) {
       cardBig.style.position = 'absolute'
       cardBig.style.top = '50%'
       cardBig.style.left = '50%'
-      cardBig.style.transform = 'translate(-50%, -50%)';
-      
-
+      cardBig.style.transform = 'translate(-50%, -50%)'
 
 
       overlay.appendChild(cardBig)
       overlay.style.display = 'flex'
 
-
-      //  Funzione per rimuovere bottone
-      function closeCard() {
-        button.remove()
-        location.reload();
-      }
-      button.addEventListener('click', closeCard)
+    })
 
 
-    });   //once: true per effettuare solo una volta l'evento    { once: true }
+    //  Funzione per rimuovere bottone
+    function closeCard() {
+      button.remove()
+      overlay.style.display = 'none'
+      card.classList.remove('hovered')
+    }
+
+    button.addEventListener('click', closeCard)
+
   });
 
-
 }
+
+
+
+
+
+
+
+
 
 
 
