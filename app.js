@@ -35,11 +35,11 @@ function appendCards(cards, root) {
 
 
 
-  // Aggiungere l'evento click per ogni card
+  // ciclo per le card
   const cardsGenerate = document.querySelectorAll('.card')
   cardsGenerate.forEach((card, i) => {
 
-    // /////////////////////
+    // Aggiungere l'evento click per ogni card
     card.addEventListener('click', () => {
 
       const { url } = cards[i]
@@ -65,7 +65,7 @@ function appendCards(cards, root) {
     })
 
 
-    //  Funzione per rimuovere bottone
+    //  Funzione per chiudere la card
     function closeCard() {
       button.remove()
       overlay.style.display = 'none'
